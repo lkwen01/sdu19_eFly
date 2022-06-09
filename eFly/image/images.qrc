@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/title">
+        <file>eFly.png</file>
+        <file>userIcon.png</file>
+        <file>sadfrog.jpg</file>
+    </qresource>
+</RCC>
