@@ -7,7 +7,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include "targetplaceselect.h"
-#include "flightlist.h"
+#include "ticketlist.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,11 +21,11 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     static QList<QNetworkCookie>* cookies;
-
+    QString username;
 private slots:
     void on_startBtn_clicked();
     void setBtnText(QString str);
-
+    void setId(QString str);
     void on_endBtn_clicked();
     void on_convertBtn_clicked();
 
@@ -34,10 +34,11 @@ private slots:
 private:
     bool startClicked;
     Ui::MainWindow *ui;
-    targetPlaceSelect* targetWindow;
-    FlightList flightWindow;
+    targetPlaceSelect* targetWindow = nullptr;
+    TicketList* ticketWindow;
     QNetworkAccessManager* manager;
-
+    QString startId;
+    QString endId;
 };
 
 #endif // MAINWINDOW_H

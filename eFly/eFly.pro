@@ -10,23 +10,29 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    flightlist.cpp \
     loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
-    targetplaceselect.cpp
+    selectseat.cpp \
+    targetplaceselect.cpp \
+    ticketlist.cpp \
+    ticketpay.cpp
 
 HEADERS += \
-    flightlist.h \
     loginwindow.h \
     mainwindow.h \
-    targetplaceselect.h
+    selectseat.h \
+    targetplaceselect.h \
+    ticketlist.h \
+    ticketpay.h
 
 FORMS += \
-    flightlist.ui \
     loginwindow.ui \
     mainwindow.ui \
-    targetplaceselect.ui
+    selectseat.ui \
+    targetplaceselect.ui \
+    ticketlist.ui \
+    ticketpay.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -35,3 +41,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     image/images.qrc
+
+INCLUDEPATH += $$PWD/.
+DEPENDPATH += $$PWD/.

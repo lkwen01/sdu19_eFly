@@ -26,6 +26,16 @@ void LoginWindow::on_loginBtn_clicked()
 {
     QString username = ui->userLineEdit->text();
     QString password = ui->pwdLineEdit->text();
+
+    //服务器未联网时测试用
+    if(username == "test") {
+        mainW = new MainWindow();
+        mainW->username = username;
+        mainW->show();
+        this->hide();
+        return;
+    }
+
     ui->loginBtn->setText("……");
     //请求地址
     QString requestUrl;
@@ -60,6 +70,7 @@ void LoginWindow::on_loginBtn_clicked()
                 ui->loginBtn->setText("Verification successful");
                 QVariant variantCookies = reply->header(QNetworkRequest::SetCookieHeader);
                 MainWindow::cookies->append(qvariant_cast<QList<QNetworkCookie> >(variantCookies));
+                mainW->username = username;
                 qDebug()<<*(MainWindow::cookies);
                 this->hide();
                 mainW->show();
@@ -73,6 +84,7 @@ void LoginWindow::on_loginBtn_clicked()
         {
             QMessageBox::information(this,"提示信息","连接服务器失败");
             qDebug()<<reply->errorString();
+            ui->loginBtn->setText("登录");
         }
     });
 
