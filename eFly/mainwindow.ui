@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>eFly查询</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -22,7 +22,7 @@
      <rect>
       <x>180</x>
       <y>120</y>
-      <width>90</width>
+      <width>131</width>
       <height>30</height>
      </rect>
     </property>
@@ -40,19 +40,15 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="image/images.qrc">
-      <normaloff>:/title/userIcon.png</normaloff>:/title/userIcon.png</iconset>
+     <string>↹</string>
     </property>
    </widget>
    <widget class="QPushButton" name="endBtn">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>440</x>
       <y>120</y>
-      <width>90</width>
+      <width>131</width>
       <height>30</height>
      </rect>
     </property>
@@ -280,8 +276,6 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="image/images.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
